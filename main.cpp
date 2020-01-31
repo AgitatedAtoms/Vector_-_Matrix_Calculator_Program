@@ -5,19 +5,12 @@
 #include <iostream>
 #include <windows.h>
 
-//Include header files for ray tracer classes
-#include "Rasterization.h"
-#include "Camera.h"
-#include "Ray.h"
-#include "Tracer.h"
-#include "Sphere.h"
-#include "Spiral.h"
-
 //Include header files for 2D shape classes
 #include "Line.h"
 #include "Square.h"
 #include "Triangle.h"
 #include "Circle.h"
+#include "Spiral.h"
 #include "Curved Line.h"
 #include "Matrix Transformations.h"
 
@@ -33,13 +26,6 @@ class Circle;
 class Spiral;
 class CurvedLine;
 class MatrixTrans;
-
-//Ray Tracer Class Prototypes - 3D Sphere
-class Rasterization;
-class Camera;
-class Ray;
-class Tracer;
-class Sphere;
 
 //First function set to run
 int main()
@@ -73,7 +59,6 @@ void menu()
 			std::cout << "\n  5) Spiral...";
 			std::cout << "\n  6) Curved Line...";
 			std::cout << "\n  7) Matrix Transformation...";
-			std::cout << "\n  8) Ray Tracer(3D Sphere)... INCOMPLETE - Ray Sphere Intersection Problem, See 'Read Me.txt'";
 			std::cout << "\n  0) QUIT PROGRAM...";
 			std::cout << "\n\n>>>> ";
 		}
@@ -178,20 +163,6 @@ void menu()
 				//Create a new Martix Transformations class object -- Seperate Menu Screen is loaded
 				MatrixTrans* matTrans = new MatrixTrans(windowSize);
 
-				//Reset the menu's loop
-				break;
-			}
-
-			//Rasterization(3D Sphere) -- INCOMPLETE
-			case '8':
-			{
-				//Tell the user they chose to draw a 3D sphere and WAIT 1 second
-				std::cout << "\nRasterization(3D Sphere)...\nThis takes a while to load.. Please wait...";
-				Sleep(1000);
-
-				//Create a new Rasterization class object -- The Draw Function is started within the constructor
-				Rasterization* rasterObject = new Rasterization(windowSize);
-				
 				//Reset the menu's loop
 				break;
 			}
